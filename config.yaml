@@ -1,0 +1,61 @@
+PIDs:
+  engine_load:
+    enabled: true
+    unit: "%"
+  coolant_temp:
+    enabled: true
+    unit: "°C"
+  short_fuel_trim_1:
+    enabled: true
+    unit: "%"
+  long_fuel_trim_1:
+    enabled: true
+    unit: "%"
+  short_fuel_trim_2:
+    enabled: true
+    unit: "%"
+  long_fuel_trim_2:
+    enabled: true
+    unit: "%"
+  rpm:
+    enabled: true
+    unit: rpm
+  speed:
+    enabled: true
+    unit: km/h
+  intake_temp:
+    enabled: true
+    unit: "°C"
+  maf:
+    enabled: true
+    unit: "g/s"
+  throttle_pos:
+    enabled: true
+    unit: "%"
+  obd_compliance:
+    enabled: true
+    unit: string
+  run_time:
+    enabled: true
+    unit: s
+  commanded_egr:
+    enabled: true
+    unit: "%"
+  fuel_level:
+    enabled: true
+    unit: "%"
+  ambiant_air_temp:
+    enabled: true
+    unit: "°C"
+  fuel_type:
+    enabled: true
+    unit: string
+  oil_temp:
+    enabled: true
+    unit: "°C"
+  fuel_rate:
+    enabled: true
+    unit: l/h
+
+# Profiles: c1, 107, vw 
+vehicle_profile: emulator
