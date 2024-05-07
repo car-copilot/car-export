@@ -34,21 +34,21 @@ def set_emulator_watchers(connection):
         decode_fuel_rate_0_3212
     ))
     
-    emulator_cmds.append(OBDCommand(
-        "SHORT_FUEL_TRIM_1",
-        "Short Term Fuel Trim - Bank 1",
-        b'0106',
-        3,
-        decode_percent__100_100
-    ))
+    # emulator_cmds.append(OBDCommand(
+    #     "SHORT_FUEL_TRIM_1",
+    #     "Short Term Fuel Trim - Bank 1",
+    #     b'0106',
+    #     3,
+    #     decode_percent__100_100
+    # ))
     
-    emulator_cmds.append(OBDCommand(
-        "LONG_FUEL_TRIM_1",
-        "Long Term Fuel Trim - Bank 1",
-        b'0107',
-        3,
-        decode_percent__100_100
-    ))
+    # emulator_cmds.append(OBDCommand(
+    #     "LONG_FUEL_TRIM_1",
+    #     "Long Term Fuel Trim - Bank 1",
+    #     b'0107',
+    #     3,
+    #     decode_percent__100_100
+    # ))
     
     emulator_cmds.append(OBDCommand(
         "SHORT_FUEL_TRIM_2",
