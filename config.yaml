@@ -56,6 +56,15 @@ PIDs:
   fuel_rate:
     enabled: true
     unit: l/h
+  demand_engine:
+    enabled: false
+    unit: "%"
+  actual_engine:
+    enabled: false
+    unit: "%"
+  reference_torque:
+    enabled: false
+    unit: N.m
 
-# Profiles: c1, 107, vw 
+# Profiles: emulator, audi, aygo 
 vehicle_profile: emulator

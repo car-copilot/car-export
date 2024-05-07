@@ -3,17 +3,13 @@ import obd
 from obd import Unit
 from obd.utils import bytes_to_int
 
+# LOCAL IMPORT
+from influx import write_to_influx
+
 # DEFINE SPECIFIC UNITS
 Unit.define("newton_meter = Nm = N.m")
-
-# DISPLAY VALUES
-def display_values(res):
-    if(type(res.value) is Unit.Quantity):
-        print (res.time, res.command.name, " --> ", res.value.magnitude)
-    else:
-        print (res.time, res.command.name, " --> ", res.value)
-    
-# VALUES DECODERS
+   
+# DEFAULT DECODERS
 def decode_percent_0_100(message):
     d = message[0].data[2:]
     v = d[0]
@@ -53,4 +49,4 @@ def decode_torque_0_65(message):
 def set_default_watchers(connection, cfg):
     for name, pid in cfg["PIDs"].items():
         if pid["enabled"]:
-            connection.watch(obd.commands[name.upper()], callback=display_values, force=True)
+            connection.watch(obd.commands[name.upper()], callback=write_to_influx, force=True)

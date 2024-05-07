@@ -3,6 +3,7 @@ from obd import OBDCommand
 
 # LOCAL IMPORTS
 from default import *
+from influx import write_to_influx
 
 def set_emulator_watchers(connection):   
     print("VEHICLE MODEL : EMULATOR")
@@ -64,15 +65,6 @@ def set_emulator_watchers(connection):
         3,
         decode_percent__100_100
     ))
-    
-    # - name: "actual_engine"
-    #     enabled: true
-    #     unit: "%"
-    #     pid: "0162"
-    # - name: "reference_engine"
-    #     enabled: true
-    #     unit: "N.m"
-    #     pid: "0163"
         
     emulator_cmds.append(OBDCommand(
         "DEMAND_ENGINE",
@@ -99,4 +91,4 @@ def set_emulator_watchers(connection):
     ))        
     
     for i in emulator_cmds:
-        connection.watch(i, callback=display_values, force=True) 
+        connection.watch(i, callback=write_to_influx, force=True) 
